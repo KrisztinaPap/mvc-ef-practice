@@ -1,6 +1,6 @@
 ﻿MVC General Notes:
 - MVC has internal routing that will point to endpoints based on the URL that is requested from the server.
-- For example, by default, if we request(~ is the root of the server) ~/Home/Privacy, it will look for the controller associated with the name "Home" (Homecontroller) and then the endpoint (in this case a View action) associated with the name Privacy.
+	- For example, by default, if we request(~ is the root of the server) ~/Home/Privacy, it will look for the controller associated with the name "Home" (Homecontroller) and then the endpoint (in this case a View action) associated with the name Privacy.
 - The same routing applies to API
 
 Project structure:
@@ -11,3 +11,15 @@ Project structure:
 - appsettings.json: A file to store some constants for the application, as well as some debug and build settings. 
 - Program.cs: Contains the entry point for the program (just like Console applications). Everything gets called through the stack from there.
 - Startup.cs: Contains some initialization methods for the application, and is also where you reguster your database context as a service.
+
+View notes:
+- The folder structure to a view for a given action should be "~/Controller/Action".
+	- This is where it will look when you return View() from an action.
+
+
+
+Controller does the heavy lifting... it might say:
+ 1) Hey Models, what does a Product look like?
+ 2) Grabs a list of Products and formats them as Product objects (like our model has!)
+ 3) Okay, we have the data! Let's call our View now to display these.
+ Separation of concerns. Each of M, V, and C have their own jobs. Controllers end up talking to everything and deciding what is going to happen when a user makes a request to the server (accesses a certain URL or webpage.)
