@@ -1,0 +1,13 @@
+﻿MVC General Notes:
+- MVC has internal routing that will point to endpoints based on the URL that is requested from the server.
+- For example, by default, if we request(~ is the root of the server) ~/Home/Privacy, it will look for the controller associated with the name "Home" (Homecontroller) and then the endpoint (in this case a View action) associated with the name Privacy.
+- The same routing applies to API
+
+Project structure:
+- wwwroot: "CLient-side" files associated with delivery. (ie. css, js, etc.)
+- Controllers: They are responsible for the manipulation of data as well as directing requests/queries to the proper endpoints. This includes both API and View endpoints.
+- Models: Provide structure to the data. The main models will be the ones that mirror the database tables, however, other models can be added for transferring data, etc.
+- Views: Represent dynamic HTML pages that are modified by the C# server runtime (kinda smiliar to PHP).
+- appsettings.json: A file to store some constants for the application, as well as some debug and build settings. 
+- Program.cs: Contains the entry point for the program (just like Console applications). Everything gets called through the stack from there.
+- Startup.cs: Contains some initialization methods for the application, and is also where you reguster your database context as a service.
