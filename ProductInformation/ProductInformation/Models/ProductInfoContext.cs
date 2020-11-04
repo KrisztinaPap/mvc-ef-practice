@@ -33,14 +33,6 @@ namespace ProductInformation.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-            modelBuilder.Entity<Product>(entity =>
-            {
-                entity.Property(e => e.Name)
-                        .HasCharSet("utf8mb4")
-                        .HasCollation("utf8mb4_general_ci");
-            });
-
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.Property(e => e.Name)
@@ -48,7 +40,12 @@ namespace ProductInformation.Models
                         .HasCollation("utf8mb4_general_ci");
             });
 
+            modelBuilder.Entity<Product>(entity =>
+            {
+                entity.Property(e => e.Name)
+                        .HasCharSet("utf8mb4")
+                        .HasCollation("utf8mb4_general_ci");
+            });
         }
-
     }
 }
