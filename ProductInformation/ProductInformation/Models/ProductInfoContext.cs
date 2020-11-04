@@ -38,6 +38,23 @@ namespace ProductInformation.Models
                 entity.Property(e => e.Name)
                         .HasCharSet("utf8mb4")
                         .HasCollation("utf8mb4_general_ci");
+
+                entity.HasData(
+                    new Category()
+                    {
+                        ID = -1,
+                        Name = "Utencil"
+                    },
+                    new Category()
+                    {
+                        ID = -2,
+                        Name = "Stationary"
+                    },
+                    new Category()
+                    {
+                        ID = -3,
+                        Name = "Paint"
+                    });
             });
 
             modelBuilder.Entity<Product>(entity =>
@@ -57,6 +74,38 @@ namespace ProductInformation.Models
                     .HasForeignKey(thisEntity => thisEntity.CategoryID)
                     .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName(keyToCategory);
+
+                entity.HasData(
+                    new Product()
+                    {
+                        ID = -1,
+                        Name = "Spoon",
+                        CategoryID = -1
+                    },
+                    new Product()
+                    {
+                        ID = -2,
+                        Name = "Knife",
+                        CategoryID = -1
+                    },
+                    new Product()
+                    {
+                        ID = -3,
+                        Name = "Ladle",
+                        CategoryID = -1
+                    },
+                    new Product()
+                    {
+                        ID = -4,
+                        Name = "Paper",
+                        CategoryID = -2
+                    },
+                    new Product()
+                    {
+                        ID = -5,
+                        Name = "Notebook",
+                        CategoryID = -2
+                    });
             });
         }
     }
