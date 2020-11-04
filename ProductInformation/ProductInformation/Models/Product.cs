@@ -31,8 +31,12 @@ namespace ProductInformation.Models
             get; set;
         }
 
-        //[ForeignKey(nameof(CategoryID))]
-        //[InverseProperty(nameof(Models.Category.ID))]
+        [ForeignKey(nameof(CategoryID))]
+        [InverseProperty(nameof(Models.Category.Products))]
 
+        public virtual Category Category 
+        { 
+            get; set; 
+        }
     }
 }
