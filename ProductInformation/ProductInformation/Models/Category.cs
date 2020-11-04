@@ -19,6 +19,7 @@ namespace ProductInformation.Models
         }
 
         [Column(TypeName = "varchar(50)")]
+        [Required]
         public string Name
         {
             get; set;

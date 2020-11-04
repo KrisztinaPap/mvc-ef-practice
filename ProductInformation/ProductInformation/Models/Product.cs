@@ -18,21 +18,21 @@ namespace ProductInformation.Models
             get; set;
         }
 
-        [Column(TypeName = "varchar(50)")]
+        [Column(TypeName = "varchar(30)")]
+        [Required]
         public string Name
         {
             get; set;
         }
 
-        [Column(TypeName = "int(10")]
+        [Column(TypeName = "int(10)")]
         public int CategoryID
         {
             get; set;
         }
 
-        [ForeignKey(nameof(CategoryID))]
-        [InverseProperty(nameof(Models.Category.ID))]
+        //[ForeignKey(nameof(CategoryID))]
+        //[InverseProperty(nameof(Models.Category.ID))]
 
-        public virtual 
     }
 }
