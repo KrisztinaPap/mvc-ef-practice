@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "List";
+}
+
+<h2>Product List</h2>
+
+@if (ViewBag.Products.Count > 0 && ViewBag.Products != null)
+{
+    <table class="table">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Category ID</th>
+            <th scope="col">Product Name</th>
+        </tr>
+        @foreach (Product product in ViewBag.Products)
+        {
+            <tr>
+                <td scope="col">@(product.ID)</td>
+                <td scope="col">@(product.Category.Name)</td>
+                <td scope="col">@(product.Name)</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>There are no products to display.</p>
+}

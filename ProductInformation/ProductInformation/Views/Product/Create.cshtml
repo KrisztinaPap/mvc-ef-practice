@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create a Product</h2>
+<p class="alert-@(ViewBag.Error != null ? "danger" : "success")">Error: @(ViewBag.Message)</p>
+
+<form action="/Product/Create" method="post">
+    <label for="name">Product Name:</label>
+    <input id="name" type="text" name="name" value="@(ViewBag.Name)" />
+
+    <label for="categoryID">Product Category:</label>
+    <input id="categoryID" type="text" name="categoryID" value="@(ViewBag.CategoryID)" />
+
+    <input type="submit" value="Submit" />
+</form>
